@@ -1,0 +1,122 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-color: rgb(14, 138, 138);
+    text-align: center;
+}
+#msg{
+    font-size: xx-large;
+    color: #e03b3b;
+    text-shadow: 2px 2px 5px black;
+
+}
+.msg-container{
+    margin: 25px;
+}
+ 
+.container{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hide{
+    display: none;
+}
+
+.game{
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2vmin;
+    
+
+}
+.box{
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    font-size: 8vmin;
+    border: none;
+    box-shadow:  0 0 0 1rem rgba(0, 0, 0, 0.1);
+    color: rgba(228, 51, 51, 0.833);
+    background-color: #d3fbfd;
+
+}
+
+.btn{
+    /* text-align: center; */
+    width: 25vmin;
+    padding: 15px 40px;
+    margin: 10px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+
+}
+
+.btn::after{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+
+}
+
+.btn::before{
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #6a1919,#f99442,#797829,#73d74b,
+        #2fd4b9,#253378,#691e5a,#e03b3b
+    );
+    position: absolute;
+    top:-2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width:calc(100% + 4px);
+    height: calc(100%  + 4px);
+    filter: blur(8px);
+    /* animation */
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s easw-in-out;
+    border-radius: 10px;
+    opacity:1;
+   
+
+}
+
+@keyframes glowing{
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+
+
+.btn:hover::before{
+    opacity: 1;
+}
+
+.btn:active:after{
+    background: transparent;
+}
+
+.btn:active{
+    color: #000;
+    font-weight: bold;
+}
